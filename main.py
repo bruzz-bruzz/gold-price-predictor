@@ -12,7 +12,7 @@ X = X.drop(columns=['USD','EUR','JPY','GBP','CAD','CHF','INR',
 Y = data['USD'].apply(lambda x: x.replace(',',''))
 x_train,x_test,y_train,y_test = train_test_split(X,Y,test_size=0.2,random_state=42)
 print(X,Y)
-model = RandomForestRegressor(random_state=42,n_estimators=500)
+model = RandomForestRegressor(random_state=42,max_depth=10,n_estimators=500)
 model.fit(x_train,y_train)
 pred = model.predict(x_test)
 mae = mean_absolute_error(y_test,pred)
