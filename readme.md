@@ -1,5 +1,7 @@
 # Gold Price Predictor
 
+[Link](https://8xrxkoq3hbsddj95wk84tk.streamlit.app/)
+
 A machine learning project to predict the price of gold (in USD) based on the date.
 
 ## Features
