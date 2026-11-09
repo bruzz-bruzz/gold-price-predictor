@@ -2,17 +2,11 @@ import streamlit as st
 import joblib
 import pandas as pd
 import datetime
-
-# Load the model
 model = joblib.load('predictor.pkl')
-
 st.set_page_config(page_title="Gold Price Predictor", page_icon="💰")
 st.title("💰 Gold Price Predictor")
 st.write("Enter a date to predict the gold price (USD).")
-
-# Date input
 selected_date = st.date_input("Select Date", datetime.date.today())
-
 if st.button("Predict Price", type="primary"):
     timestamp = (pd.Timestamp(selected_date) - pd.Timestamp('1970-01-01')) // pd.Timedelta('1s')
     input_data = pd.DataFrame({'Date': [timestamp]})
